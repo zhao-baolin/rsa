@@ -1,37 +1,27 @@
 # 前后端数据加密传输 RSA非对称加密
 
-#### 项目介绍
-前后端数据加密传输 RSA非对称加密
+#### 任务需求
+要求登陆时将密码加密之后再进行传输到后端
 
-#### 软件架构
-软件架构说明
+#### 加密方式
+RSA非对称加密
 
+#### 实现
+公钥加密，私钥解密
 
-#### 安装教程
+#### 研究进度
+javascript与java端皆已实现
 
-1. xxxx
-2. xxxx
-3. xxxx
+#### 个人方案
+定时器，每天凌晨四五点跑，更换公钥私钥。
+前端页面进入登录页，则请求后端获取公钥，当用户输入完登录表单点击提交时，将公钥与密码进行加密后传输。
+如果后端解密失败，则返回指定状态码给前端，前端拿到此状态码，则再次请求后端，重新获取公钥。
 
-#### 使用说明
+#### 目录文件讲解
+java为服务端代码
 
-1. xxxx
-2. xxxx
-3. xxxx
+    Encrypt.java是一个controller控制器 演示了使用公钥将字符串进行加密 使用私钥将密文进行解密 
+    encrypt目录下的RSACoder.java文件里有一个main方法 此方法演示了生成公钥私钥
+html为客户端代码
 
-#### 参与贡献
-
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
-
-
-#### 码云特技
-
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [http://git.mydoc.io/](http://git.mydoc.io/)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+    01.html演示了使用公钥将字符串进行加密
